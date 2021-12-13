@@ -1,0 +1,22 @@
+.button {
+    font: inherit;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: 1rem;
+    border-radius: 12px;
+    border: 1px solid #40005d;
+    background-color: #40005d;
+    color: white;
+    transition: all .25s ease;
+    svg path {
+        fill: currentColor;
+    }
+    &:hover, &:active {
+        background-color: #a71722;
+        border-color: #a71722;
+    }
+}
