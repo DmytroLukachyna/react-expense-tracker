@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { ContainerMain } from 'components/UI/ContainerMain';
 import { ExpenseFormWrapper } from 'components/form/ExpenseFormWrapper';
 import { ExpensesWrapper } from 'components/items/ExpensesWrapper';
 import type { Item } from 'types/types';
-import setToLocalStorage from 'utils/setToLocalStorage';
+import { setToLocalStorage, getFromLocalStorage } from 'utils/localStorage';
 
-const initialExpenses: Item[] = localStorage.getItem('list') === null ? [] : JSON.parse(localStorage.getItem('list')!);
+const initialExpenses: Item[] = getFromLocalStorage() === null ? [] : JSON.parse(getFromLocalStorage() as string);
 
 const App: React.FC = () => {
   const [expenses, setExpenses] = useState(initialExpenses);
@@ -23,10 +24,10 @@ const App: React.FC = () => {
     });
   };
   return (
-    <div>
+    <ContainerMain>
       <ExpenseFormWrapper dataSubmitHandler={addExpenseHandler} />
       <ExpensesWrapper items={expenses} onDeleteExpense={deleteExpenseHandler} />
-    </div>
+    </ContainerMain>
   );
 };
 
