@@ -6,30 +6,6 @@
 	text-align: left;
 }
 
-.title {
-	font-weight: bold;
-	margin-bottom: 0.5rem;
-	display: block;
-}
-
-.input {
-	font: inherit;
-	padding: 0.5rem;
-	border-radius: 6px;
-	border: 1px solid #ccc;
-	width: 20rem;
-	max-width: 100%;
-	transition: all .25s ease;
-	outline: none;
-	&[type="date"] {
-		cursor: pointer;
-	}
-	&:active,
-	&:focus {
-		box-shadow: inset 0 0 0 2px red;
-	}
-}
-
 .buttons {
 	text-align: right;
 }

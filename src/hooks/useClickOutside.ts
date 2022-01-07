@@ -13,8 +13,6 @@ export default function useClickOutside({ ref, callback }: ClickOutsideProps): v
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   });
 }

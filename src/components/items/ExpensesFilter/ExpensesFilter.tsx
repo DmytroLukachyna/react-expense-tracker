@@ -1,5 +1,5 @@
 import React from 'react';
-import type { SelectType } from 'types/types';
+import type { SelectType } from 'types';
 import style from './ExpensesFilter.module.scss';
 
 

@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ExpenseItem } from 'components/items/ExpenseItem';
-import type { Item } from 'types/types';
+import type { Item } from 'types';
 import style from './ExpenseList.module.scss';
+import { ExpenseContext } from 'App';
 
 export interface ExpenseListProps {
   items: Item[];
-  onDeleteExpenseHandler(id: number): void;
 }
 
-const ExpenseList: React.FC<ExpenseListProps> = ({ items, onDeleteExpenseHandler }) => {
+const ExpenseList: React.FC<ExpenseListProps> = ({ items }) => {
   if (items.length === 0) {
     return <h2 className={style.fallback}>Found no expenses.</h2>;
   }
+
+  const { onDeleteExpense } = useContext(ExpenseContext);
 
   return (
     <ul className={style.list}>
@@ -19,7 +21,7 @@ const ExpenseList: React.FC<ExpenseListProps> = ({ items, onDeleteExpenseHandler
         <ExpenseItem
           key={expense.id}
           item={expense}
-          deleteItem={onDeleteExpenseHandler}
+          deleteItem={onDeleteExpense!}
         />
       ))}
     </ul>

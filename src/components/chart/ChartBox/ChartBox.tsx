@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChartBar } from 'components/chart/ChartBar';
-import type { ChartItem } from 'types/types';
+import type { ChartItem } from 'types';
 import style from './ChartBox.module.scss';
 
 export interface ChartBoxProps {

@@ -1,5 +1,7 @@
+@import "../../../assets/styles/colors.scss";
+
 .filter {
-	color: #ffffff;
+	color: map-get($colors, 'white');
 	padding: 0 1rem;
 }
 

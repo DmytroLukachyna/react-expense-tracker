@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import { ContainerMain } from 'components/UI/ContainerMain';
 import { ExpenseFormWrapper } from 'components/form/ExpenseFormWrapper';
 import { ExpensesWrapper } from 'components/items/ExpensesWrapper';
-import type { Item } from 'types/types';
+import type { Item } from 'types';
 import { setToLocalStorage, getFromLocalStorage } from 'utils/localStorage';
 
 const initialExpenses: Item[] = getFromLocalStorage() === null ? [] : JSON.parse(getFromLocalStorage() as string);
+
+interface ExpenseContextProps {
+  expenses: Item[] | null;
+  onAddExpense(arg: Item): void;
+  onDeleteExpense(id: number): void;
+}
+
+export const ExpenseContext = createContext<Partial<ExpenseContextProps>>({});
 
 const App: React.FC = () => {
   const [expenses, setExpenses] = useState(initialExpenses);
@@ -24,10 +32,16 @@ const App: React.FC = () => {
     });
   };
   return (
-    <ContainerMain>
-      <ExpenseFormWrapper dataSubmitHandler={addExpenseHandler} />
-      <ExpensesWrapper items={expenses} onDeleteExpense={deleteExpenseHandler} />
-    </ContainerMain>
+    <ExpenseContext.Provider value={{
+      expenses,
+      onAddExpense: addExpenseHandler,
+      onDeleteExpense: deleteExpenseHandler,
+    }}>
+      <ContainerMain>
+        <ExpenseFormWrapper />
+        <ExpensesWrapper />
+      </ContainerMain>
+    </ExpenseContext.Provider>
   );
 };
 

@@ -10,18 +10,27 @@ export interface ErrorModalProps {
   onConfirm(): void;
 }
 
-const ErrorModal: React.FC<ErrorModalProps> = ({ title, message, className, onConfirm }) => (
-  <div className={classNames(style.modal, className)}>
-    <header className={style.header}>
-      <h2 className={style.title}>{title}</h2>
-    </header>
-    <div className={style.content}>
-      <p>{message}</p>
+const ErrorModal: React.FC<ErrorModalProps> = ({ title, message, className, onConfirm }) => {
+  const stopPropagationHandler = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
+  };
+  return (
+    <div
+      className={classNames(style.modal, className)}
+      role='presentation'
+      onClick={stopPropagationHandler }
+    >
+      <header className={style.header}>
+        <h2 className={style.title}>{title}</h2>
+      </header>
+      <div className={style.content}>
+        <p>{message}</p>
+      </div>
+      <footer className={style.actions}>
+        <Button onClick={onConfirm}>Okay</Button>
+      </footer>
     </div>
-    <footer className={style.actions}>
-      <Button onClick={onConfirm}>Okay</Button>
-    </footer>
-  </div>
-);
+  );
+};
 
 export default ErrorModal;

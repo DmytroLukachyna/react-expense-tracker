@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChartBox } from 'components/chart/ChartBox';
-import type { Item } from 'types/types';
+import type { Item } from 'types';
 
 export interface ExpenseChartProps {
   expenses: Item[];

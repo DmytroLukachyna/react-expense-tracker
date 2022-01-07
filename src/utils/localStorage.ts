@@ -1,4 +1,4 @@
-import type { Item } from 'types/types';
+import type { Item } from 'types';
 
 export const setToLocalStorage = (item: Item[]): void => localStorage.setItem('list', JSON.stringify(item));
 

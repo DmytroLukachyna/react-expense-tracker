@@ -1,3 +1,5 @@
+@import "../../../assets/styles/colors.scss";
+
 .date {
 	display: flex;
 	flex-direction: column;
@@ -5,7 +7,7 @@
 	height: 5.5rem;
 	border: 1px solid #ececec;
 	background-color: #2a2a2a;
-	color: #ffffff;
+	color: map-get($colors, 'white');
 	border-radius: 12px;
 	align-items: center;
 	justify-content: center;
