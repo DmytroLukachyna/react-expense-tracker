@@ -1,12 +1,12 @@
-@import "../../../assets/styles/colors.scss";
+@import '../../../assets/styles/colors.scss';
 
 .list {
-	list-style: none;
-	padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .fallback {
-	color: map-get($colors, 'white');
-	text-align: center;
-	margin-top: 1rem;
+  color: map-get($colors, 'white');
+  text-align: center;
+  margin-top: 1rem;
 }

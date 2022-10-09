@@ -1,27 +1,27 @@
-@import "../../../assets/styles/colors.scss";
+@import '../../../assets/styles/colors.scss';
 
 .filter {
-	color: map-get($colors, 'white');
-	padding: 0 1rem;
+  color: map-get($colors, 'white');
+  padding: 0 1rem;
 }
 
 .control {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	justify-content: space-between;
-	margin: 1rem 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
 }
 
 .label {
-	font-weight: bold;
-	margin-bottom: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 .select {
-	font: inherit;
-	text-align: center;
-	padding: 0.5rem 1rem;
-	font-weight: bold;
-	border-radius: 6px;
+  font: inherit;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 6px;
 }

@@ -1,27 +1,27 @@
 .component {
-	max-width: 23rem;
-	width: 100%;
+  max-width: 23rem;
+  width: 100%;
 }
 
 .title {
-	font-weight: bold;
-	margin-bottom: 0.5rem;
-	display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 .input {
-	font: inherit;
-	padding: 0.5rem;
-	border-radius: 6px;
-	border: 1px solid #ccc;
-	width: 100%;
-	transition: all .25s ease;
-	outline: none;
-	&[type="date"] {
-		cursor: pointer;
-	}
-	&:active,
-	&:focus {
-		box-shadow: inset 0 0 0 2px red;
-	}
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  transition: all 0.25s ease;
+  outline: none;
+  &[type='date'] {
+    cursor: pointer;
+  }
+  &:active,
+  &:focus {
+    box-shadow: inset 0 0 0 2px red;
+  }
 }

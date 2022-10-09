@@ -7,7 +7,9 @@ export interface DeleteButtonProps {
 }
 
 const DeleteButton: React.FC<DeleteButtonProps> = ({ onClick }) => (
-  <button className={style.button} onClick={onClick}><DeleteIcon /></button>
+  <button className={style.button} onClick={onClick}>
+    <DeleteIcon />
+  </button>
 );
 
 export default DeleteButton;

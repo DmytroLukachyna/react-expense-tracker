@@ -7,7 +7,7 @@ import style from './ExpensesWrapper.module.scss';
 
 const ExpensesWrapper: React.FC = () => {
   const [filteredYear, setFilteredYear] = useState('2022');
-  
+
   const { expenses } = useContext(ExpenseContext);
 
   const filterChangeHandler = (selectedYear: string) => {
@@ -23,10 +23,7 @@ const ExpensesWrapper: React.FC = () => {
 
   return (
     <div className={style.expenses}>
-      <ExpensesFilter
-        selectedYear={filteredYear}
-        onChange={filterChangeHandler}
-      />
+      <ExpensesFilter selectedYear={filteredYear} onChange={filterChangeHandler} />
       <ExpenseChart expenses={filteredExpenses} selectedYear={filteredYear} />
       <ExpenseList items={filteredExpenses} />
     </div>

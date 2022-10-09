@@ -24,14 +24,6 @@ module.exports = {
 		'@typescript-eslint',
 	],
 	rules: {
-		'import/no-extraneous-dependencies': [
-			'error',
-			{
-				devDependencies: [
-					'**/*.stories.tsx',
-				],
-			},
-		],
 		"indent": ["error", 2],
 	},
 	settings: {

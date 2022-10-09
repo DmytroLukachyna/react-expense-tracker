@@ -5,7 +5,8 @@ import { ExpensesWrapper } from 'components/items/ExpensesWrapper';
 import type { Item } from 'types';
 import { setToLocalStorage, getFromLocalStorage } from 'utils/localStorage';
 
-const initialExpenses: Item[] = getFromLocalStorage() === null ? [] : JSON.parse(getFromLocalStorage() as string);
+const initialExpenses: Item[] =
+  getFromLocalStorage() === null ? [] : JSON.parse(getFromLocalStorage() as string);
 
 interface ExpenseContextProps {
   expenses: Item[] | null;
@@ -32,11 +33,13 @@ const App: React.FC = () => {
     });
   };
   return (
-    <ExpenseContext.Provider value={{
-      expenses,
-      onAddExpense: addExpenseHandler,
-      onDeleteExpense: deleteExpenseHandler,
-    }}>
+    <ExpenseContext.Provider
+      value={{
+        expenses,
+        onAddExpense: addExpenseHandler,
+        onDeleteExpense: deleteExpenseHandler,
+      }}
+    >
       <ContainerMain>
         <ExpenseFormWrapper />
         <ExpensesWrapper />

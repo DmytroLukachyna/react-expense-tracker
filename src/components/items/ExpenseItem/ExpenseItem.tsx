@@ -21,7 +21,7 @@ const ExpenseItem: React.FC<ExpenseItemProps> = ({ item, deleteItem }) => {
           <h2 className={style.title}>{item.title}</h2>
           <div className={style.price}>${item.price}</div>
         </div>
-        <DeleteButton onClick={deleteExpenseHandler}>Delete</DeleteButton>
+        <DeleteButton onClick={deleteExpenseHandler} />
       </div>
     </li>
   );

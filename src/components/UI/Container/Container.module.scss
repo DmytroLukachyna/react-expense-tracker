@@ -1,9 +1,9 @@
 @import '../../../assets/styles/grid.scss';
 
 .container {
-	@include display;
-	@include position;
+  @include display;
+  @include position;
 
-	@include flex-grow;
-	@include flex-shrink;
+  @include flex-grow;
+  @include flex-shrink;
 }

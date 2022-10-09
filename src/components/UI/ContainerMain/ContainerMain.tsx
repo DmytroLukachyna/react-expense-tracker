@@ -4,12 +4,11 @@ import style from './ContainerMain.module.scss';
 
 export interface ContainerMainProps {
   className?: string;
+  children: React.ReactNode;
 }
 
 const ContainerMain: React.FC<ContainerMainProps> = ({ className, children }) => (
-  <div className={classNames(style.component, className)}>
-    {children}
-  </div>
+  <div className={classNames(style.component, className)}>{children}</div>
 );
 
 export default ContainerMain;

@@ -14,11 +14,22 @@ export interface InputProps {
   onChange(event: InputType): void;
 }
 
-const Input: React.FC<InputProps> = ({ type, title, value, min, max, step, className, onChange }) => {
+const Input: React.FC<InputProps> = ({
+  type,
+  title,
+  value,
+  min,
+  max,
+  step,
+  className,
+  onChange,
+}) => {
   const id = title.toLowerCase();
   return (
     <div className={classNames(style.component, className)}>
-      <label htmlFor={id} className={style.title}>{title}</label>
+      <label htmlFor={id} className={style.title}>
+        {title}
+      </label>
       <input
         id={id}
         className={style.input}

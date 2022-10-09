@@ -1,1 +1,1 @@
-https://dmytrolukachyna.github.io/projects/react-expense-tracker/
+https://dmytrolukachyna.pp.ua/projects/pet/expense-tracker/

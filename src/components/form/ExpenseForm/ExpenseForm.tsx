@@ -55,11 +55,13 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ onCancel }) => {
       setEnteredDate('');
     } else {
       const fields = {
-        'Title': enteredTitle,
-        'Price': enteredPrice,
-        'Date': enteredDate,
+        Title: enteredTitle,
+        Price: enteredPrice,
+        Date: enteredDate,
       };
-      const emptyFields = Object.keys(Object.fromEntries(Object.entries(fields).filter(([, value]) => value.length === 0))).join(', ');
+      const emptyFields = Object.keys(
+        Object.fromEntries(Object.entries(fields).filter(([, value]) => value.length === 0)),
+      ).join(', ');
       console.log(`Empty fields: ${emptyFields}`);
       setError({
         title: 'Something went wrong...',
@@ -67,44 +69,41 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ onCancel }) => {
       });
     }
   };
-  
+
   return (
     <>
-      {error &&
-      <Portal>
-        <Overlay onClick={errorHandler}>
-          <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler} />
-        </Overlay>
-      </Portal>
-      }
+      {error && (
+        <Portal>
+          <Overlay onClick={errorHandler}>
+            <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler} />
+          </Overlay>
+        </Portal>
+      )}
       <form onSubmit={submitHandler}>
         <div className={style.inputs}>
-          <Input
-            title="Title"
-            type="text"
-            value={enteredTitle}
-            onChange={titleChangeHandler}
-          />
+          <Input title="Title" type="text" value={enteredTitle} onChange={titleChangeHandler} />
           <Input
             title="Price"
             type="number"
-            min='0.01'
-            step='0.01'
+            min="0.01"
+            step="0.01"
             value={enteredPrice}
             onChange={priceChangeHandler}
           />
           <Input
             title="Date"
             type="date"
-            min='2019-01-01'
-            max='2022-12-31'
+            min="2019-01-01"
+            max="2022-12-31"
             value={enteredDate}
             onChange={dateChangeHandler}
           />
         </div>
         <div className={style.buttons}>
-          <Button type="button" onClick={onCancel}>Cancel</Button>
-          <Button type='submit'>Add Expense</Button>
+          <Button type="button" onClick={onCancel}>
+            Cancel
+          </Button>
+          <Button type="submit">Add Expense</Button>
         </div>
       </form>
     </>

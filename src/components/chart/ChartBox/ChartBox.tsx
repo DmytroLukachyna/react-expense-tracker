@@ -8,18 +8,13 @@ export interface ChartBoxProps {
 }
 
 const ChartBox: React.FC<ChartBoxProps> = ({ data }) => {
-  const values = data.map(item => item.value);
+  const values = data.map((item) => item.value);
   const total = [...values].reduce((a, b) => a + b);
 
   return (
     <div className={style.box}>
-      {data.map((item) => (
-        <ChartBar
-          key={item.label}
-          value={item.value}
-          total={total}
-          label={item.label}
-        />
+      {data.map(({ label, value }) => (
+        <ChartBar key={label} value={value} total={total} label={label} />
       ))}
     </div>
   );

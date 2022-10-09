@@ -13,12 +13,8 @@ const ExpenseFormWrapper: React.FC = () => {
   };
   return (
     <div className={style.expense}>
-      {!isEditing && (
-        <Button onClick={startEditingHandler}>Add New Expense</Button>
-      )}
-      {isEditing && (
-        <ExpenseForm onCancel={stopEditingHandler} />
-      )}
+      {!isEditing && <Button onClick={startEditingHandler}>Add New Expense</Button>}
+      {isEditing && <ExpenseForm onCancel={stopEditingHandler} />}
     </div>
   );
 };

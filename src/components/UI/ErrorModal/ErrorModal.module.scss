@@ -1,40 +1,40 @@
+@import '../../../assets/styles/colors.scss';
+
 .modal {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 40rem;
-	z-index: 100;
-	overflow: hidden;
-    border-radius: 12px;
-    background: white;
-	animation: FadeIn .5s ease;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  z-index: 100;
+  overflow: hidden;
+  border-radius: 12px;
+  background: map-get($colors, 'white');
+  animation: FadeIn 0.5s ease;
 }
 
 @keyframes FadeIn {
-	from {
-		opacity: 0;
-	}
+  from {
+    opacity: 0;
+  }
 }
 
-
-
 .header {
-	background: #4f005f;
-	padding: 1rem;
+  background: #4f005f;
+  padding: 1rem;
 }
 
 .title {
-	margin: 0;
-	color: #ffffff;
+  margin: 0;
+  color: map-get($colors, 'white');
 }
 
 .content {
-	padding: 1rem;
+  padding: 1rem;
 }
 
 .actions {
-	padding: 1rem;
-	display: flex;
-	justify-content: flex-end;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
 }

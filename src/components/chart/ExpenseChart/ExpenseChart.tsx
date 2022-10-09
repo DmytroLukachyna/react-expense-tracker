@@ -33,7 +33,7 @@ const ExpenseChart: React.FC<ExpenseChartProps> = ({ expenses, selectedYear }) =
   for (const expense of expenses) {
     if (selectedYear === 'All') {
       const expenseYear = new Date(expense.date).getFullYear().toString();
-      const yearsArray = years.map(year => year.label);
+      const yearsArray = years.map((year) => year.label);
       const position = yearsArray.indexOf(expenseYear);
       years[position].value += expense.price;
     } else {

@@ -17,8 +17,8 @@ const ErrorModal: React.FC<ErrorModalProps> = ({ title, message, className, onCo
   return (
     <div
       className={classNames(style.modal, className)}
-      role='presentation'
-      onClick={stopPropagationHandler }
+      role="presentation"
+      onClick={stopPropagationHandler}
     >
       <header className={style.header}>
         <h2 className={style.title}>{title}</h2>

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 export interface ClickOutsideProps {
-  ref: HTMLDivElement | null,
+  ref: HTMLDivElement | null;
   callback(arg: boolean): void;
 }
 

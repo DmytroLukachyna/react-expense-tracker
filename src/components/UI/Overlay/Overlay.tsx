@@ -5,14 +5,11 @@ import style from './Overlay.module.scss';
 export interface OverlayProps {
   className?: string;
   onClick?(): void;
+  children: React.ReactNode;
 }
 
 const Overlay: React.FC<OverlayProps> = ({ className, onClick, children }) => (
-  <div
-    className={classNames(style.overlay, className)}
-    role='presentation'
-    onClick={onClick}
-  >
+  <div className={classNames(style.overlay, className)} role="presentation" onClick={onClick}>
     {children}
   </div>
 );
